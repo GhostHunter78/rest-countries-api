@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import ArrowLeftLight from "./SVGs/ArrowLeftLight";
 import data from "./data.json";
 
-const SelectedCountry = () => {
+const SelectedCountry = ({ activeTheme }) => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
@@ -14,7 +14,7 @@ const SelectedCountry = () => {
 
   // Check if country is found
   if (!country) {
-    return <div>Country not found</div>;
+    return null;
   }
 
   return (
