@@ -1,4 +1,4 @@
-const ArrowLeftDark = () => {
+const ArrowLeftDark = ({ activeTheme }) => {
   return (
     <>
       <svg
@@ -7,6 +7,7 @@ const ArrowLeftDark = () => {
         viewBox="0 0 20 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        // style={{ display: (activeTheme = "light" ? "none" : "block") }}
       >
         <g id="call-made">
           <path

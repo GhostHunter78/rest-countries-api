@@ -1,10 +1,14 @@
 import { useState } from "react";
 import ArrowDownLight from "../SVGs/ArrowDownLight";
+import ArrowDownDark from "../SVGs/ArrowDownDark";
 import SearchLight from "../SVGs/SearchLight";
+import SearchDark from "../SVGs/SearchDark";
+import data from "../data.json";
 
-const SearchFields = ({ activeTheme }) => {
+const SearchFields = ({ activeTheme, onSearch, filters }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("Filter by Region");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filterChoose = (filter) => {
     setSelectedFilter(filter);
@@ -14,6 +18,24 @@ const SearchFields = ({ activeTheme }) => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  // Function to handle input change and filter countries based on search term
+  const handleSearch = (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+    onSearch(term); // Call the onSearch function passed from the parent component
+  };
+
+  // const handleAfricaFilter = () => {
+  //   const africaFilter = data.filter(
+  //     (country) => country.region.toLowerCase() === "africa"
+  //   );
+  //   onSearch(africaFilter); // Call the onSearch function with the Africa filter result
+  // };
+
+  // const handleAfricaFilter = () => {
+  //   africaFilter(); // Call the africaFilter function passed from props
+  // };
 
   return (
     <>
@@ -29,10 +51,12 @@ const SearchFields = ({ activeTheme }) => {
               background: activeTheme === "light" ? "white" : "#2b3844",
               color: activeTheme === "light" ? "#111517" : "white",
             }}
+            value={searchTerm}
+            onChange={handleSearch}
           />
           <label className="absolute grid place-items-center top-[-2px] bottom-0">
             <button className="bg-transparent border-0 p-5 outline-none">
-              <SearchLight />
+              {activeTheme === "light" ? <SearchLight /> : <SearchDark />}
             </button>
           </label>
         </div>
@@ -50,7 +74,7 @@ const SearchFields = ({ activeTheme }) => {
           >
             {selectedFilter}
           </p>
-          <ArrowDownLight />
+          {activeTheme === "light" ? <ArrowDownLight /> : <ArrowDownDark />}
         </div>
         {isOpen && (
           <div
@@ -64,42 +88,60 @@ const SearchFields = ({ activeTheme }) => {
               <li
                 className="text-[14px] text-blackWords font-normal cursor-pointer"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
-                onClick={() => filterChoose("Filter by Regions (All)")}
+                onClick={() => {
+                  filterChoose("Filter By regions (all)");
+                  filters.all();
+                }}
               >
-                Filter by Regions (All)
+                Filter by Regions (all)
               </li>
               <li
                 className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
-                onClick={() => filterChoose("Africa")}
+                onClick={() => {
+                  filterChoose("Africa");
+                  filters.africa();
+                }}
               >
                 Africa
               </li>
               <li
                 className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
-                onClick={() => filterChoose("America")}
+                onClick={() => {
+                  filterChoose("America");
+                  filters.americas();
+                }}
               >
                 America
               </li>
               <li
                 className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
-                onClick={() => filterChoose("Asia")}
+                onClick={() => {
+                  filterChoose("Asia");
+                  filters.asia();
+                }}
               >
                 Asia
               </li>
               <li
                 className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
-                onClick={() => filterChoose("Europe")}
+                onClick={() => {
+                  filterChoose("Europe");
+                  filters.europe();
+                }}
               >
-                Europa
+                Europe
               </li>
               <li
                 className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
-                onClick={() => filterChoose("Oceania")}
+                onClick={() => {
+                  filterChoose("Oceania");
+                  filters.oceania();
+                }}
               >
                 Oceania
               </li>

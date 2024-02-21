@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [activeTheme, setActiveTheme] = useState("light");
+
   const toggleTheme = () => {
     setActiveTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
 
