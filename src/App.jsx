@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./Layouts/Header";
 import Content from "./Content";
+import SelectedCountry from "./SelectedCountry";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Content />} />
+        <Route path="/selectedCountry/:name" element={<SelectedCountry />} />
       </Routes>
     </div>
   );
