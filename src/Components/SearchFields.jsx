@@ -26,24 +26,13 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
     onSearch(term); // Call the onSearch function passed from the parent component
   };
 
-  // const handleAfricaFilter = () => {
-  //   const africaFilter = data.filter(
-  //     (country) => country.region.toLowerCase() === "africa"
-  //   );
-  //   onSearch(africaFilter); // Call the onSearch function with the Africa filter result
-  // };
-
-  // const handleAfricaFilter = () => {
-  //   africaFilter(); // Call the africaFilter function passed from props
-  // };
-
   return (
     <>
-      <div className="flex flex-col items-left px-4">
+      <div className="flex flex-col items-left px-4 lg:px-[60px] lg:flex-row lg:items-center lg:justify-between lg:mt-[30px]">
         <div className="w-full grid relative mt-6 cursor-pointer">
           <input
             id="searchInput"
-            className="py-4 pl-[74px] pr-8 border-none rounded ml-26 text-xs font-normal font-sans font-weight-400 leading-20 outline-none"
+            className="py-4 pl-[74px] pr-8 border-none rounded ml-26 text-xs font-normal font-sans font-weight-400 leading-20 outline-none lg:w-[480px] lg:text-[16px] lg:mt-0"
             type="text"
             placeholder="Search for a country…"
             style={{
@@ -61,7 +50,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
           </label>
         </div>
         <div
-          className=" relative w-[200px] py-[14px] pr-5 pl-6 flex items-center justify-between mt-10 rounded cursor-pointer"
+          className=" relative w-[200px] py-[14px] pr-5 pl-6 flex items-center justify-between mt-10 rounded cursor-pointer lg:w-[225px] lg:mt-5"
           style={{
             boxShadow: " 0 2px 9px 0 rgba(0, 0, 0, 0.05)",
             background: activeTheme === "light" ? "white" : "#2b3844",
@@ -69,7 +58,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
           onClick={toggleDropdown}
         >
           <p
-            className="text-[14px] font-normal"
+            className="text-[14px] font-normal lg:text-[16px]"
             style={{ color: activeTheme === "light" ? "#111517" : "white" }}
           >
             {selectedFilter}
@@ -78,7 +67,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
         </div>
         {isOpen && (
           <div
-            className="absolute py-4 px-6 flex flex-col items-start rounded w-[200px] mt-1 bg-white top-[41%]"
+            className="absolute py-4 px-6 flex flex-col items-start rounded w-[200px] mt-1 bg-white top-[4%] lg:top-[25%] lg:left-[84%]"
             style={{
               boxShadow: " 0 2px 9px 0 rgba(0, 0, 0, 0.05)",
               background: activeTheme === "light" ? "white" : "#2b3844",
@@ -86,7 +75,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
           >
             <ul>
               <li
-                className="text-[14px] text-blackWords font-normal cursor-pointer"
+                className="text-[14px] text-blackWords font-normal cursor-pointer lg:text-[16px]"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
                 onClick={() => {
                   filterChoose("Filter By regions (all)");
@@ -96,7 +85,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
                 Filter by Regions (all)
               </li>
               <li
-                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
+                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer lg:text-[16px]"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
                 onClick={() => {
                   filterChoose("Africa");
@@ -106,7 +95,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
                 Africa
               </li>
               <li
-                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
+                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer lg:text-[16px]"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
                 onClick={() => {
                   filterChoose("America");
@@ -116,7 +105,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
                 America
               </li>
               <li
-                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
+                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer lg:text-[16px]"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
                 onClick={() => {
                   filterChoose("Asia");
@@ -126,7 +115,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
                 Asia
               </li>
               <li
-                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
+                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer lg:text-[16px]"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
                 onClick={() => {
                   filterChoose("Europe");
@@ -136,7 +125,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
                 Europe
               </li>
               <li
-                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer"
+                className="text-[14px] text-blackWords font-normal mt-2 cursor-pointer lg:text-[16px]"
                 style={{ color: activeTheme === "light" ? "#111517" : "white" }}
                 onClick={() => {
                   filterChoose("Oceania");

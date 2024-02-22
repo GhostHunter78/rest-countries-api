@@ -89,18 +89,21 @@ const Content = ({ activeTheme }) => {
           europe: handleEuropeFilter,
         }}
       />
-      <div className="flex flex-col items-center mt-8 gap-[40px] pb-[65px]">
+      <div className="flex flex-col items-center mt-8 gap-[40px] pb-[65px] lg:flex-row lg:flex-wrap lg:px-[60px] lg:mt-[48px]">
         {filteredCountries.map((country, index) => (
           <div
             key={index}
             onClick={() => handleNavigation(country.name)}
-            className="bg-white rounded pb-[46px] cursor-pointer"
+            className="bg-white rounded pb-[46px] cursor-pointer h-[430px] w-[324px] "
             style={{
               boxShadow: "0 0 7px 2px rgba(0, 0, 0, 0.03)",
               background: activeTheme === "light" ? "white" : "#2b3844",
             }}
           >
-            <img className="w-full rounded-t" src={country.flags.png} />
+            <img
+              className="w-full rounded-t h-[200px]"
+              src={country.flags.png}
+            />
             <p
               className="font-bold text-[20px] pl-6 pt-6"
               style={{

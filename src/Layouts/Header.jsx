@@ -10,14 +10,14 @@ const Header = ({ toggleTheme, activeTheme }) => {
   };
   return (
     <div
-      className="flex flex-row items-center w-screen justify-between px-4 py-[30px]"
+      className="flex flex-row items-center w-screen justify-between px-4 py-[30px] lg:px-[60px] lg:py-6"
       style={{
         boxShadow: "0 2px 4px 0 rgba(0, 0, 0, 0.06)",
         background: activeTheme === "light" ? "white" : "#2b3844",
       }}
     >
       <h2
-        className="font-bold  text-[14px]"
+        className="font-bold  text-[14px] lg:text-[24px]"
         style={{
           color: activeTheme === "light" ? "#111517" : "white",
         }}
@@ -30,7 +30,7 @@ const Header = ({ toggleTheme, activeTheme }) => {
       >
         {lightMode ? <LightMoon /> : <DarkMoon />}
         <p
-          className="font-semibold text-[12px]"
+          className="font-semibold text-[12px] lg:text-[16px]"
           style={{
             color: activeTheme === "light" ? "#111517" : "white",
           }}
