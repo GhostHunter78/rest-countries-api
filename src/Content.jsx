@@ -89,7 +89,7 @@ const Content = ({ activeTheme }) => {
           europe: handleEuropeFilter,
         }}
       />
-      <div className="flex flex-col items-center mt-8 gap-[40px] pb-[65px] lg:flex-row lg:flex-wrap lg:px-[60px] lg:mt-[48px]">
+      <div className="flex flex-col items-center mt-8 gap-[40px] pb-[80px] lg:flex-row lg:flex-wrap lg:px-[60px] lg:mt-[48px]">
         {filteredCountries.map((country, index) => (
           <div
             key={index}

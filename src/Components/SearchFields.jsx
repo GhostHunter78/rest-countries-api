@@ -67,7 +67,7 @@ const SearchFields = ({ activeTheme, onSearch, filters }) => {
         </div>
         {isOpen && (
           <div
-            className="absolute py-4 px-6 flex flex-col items-start rounded w-[200px] mt-1 bg-white top-[41%] lg:top-[27%] lg:left-[84%]"
+            className="absolute py-4 px-6 flex flex-col items-start rounded w-[200px] mt-1 bg-white top-[39%] lg:top-[27%] lg:left-[84%]"
             style={{
               boxShadow: " 0 2px 9px 0 rgba(0, 0, 0, 0.05)",
               background: activeTheme === "light" ? "white" : "#2b3844",

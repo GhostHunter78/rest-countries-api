@@ -20,7 +20,7 @@ const SelectedCountry = ({ activeTheme }) => {
 
   return (
     <>
-      <div className="flex flex-col items-start px-[28px] pt-[40px] pb-[60px] lg:px-[60px] h-screen">
+      <div className="flex flex-col items-start px-[28px] pt-[40px] pb-[80px] lg:px-[60px] h-screen">
         <div
           className="flex items-center gap-2 px-6 py-[7px] rounded cursor-pointer"
           style={{ boxShadow: "0 0 7px 0 rgba(0, 0, 0, 0.29)" }}
